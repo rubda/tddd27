@@ -1,7 +1,19 @@
+import express from 'express';
+import bodyParser from "body-parser";
 import http from 'http';
 
-http.createServer((req, res) => {
-    res.writeHead(200, {'Content-Type': 'text/plain'});
-    res.end('Hello World!');
-}).listen(1337, '127.0.0.1');
+import api from "./routes/api";
 
+const app = express();
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+
+app.use('/', api);
+
+const port = process.env.PORT || '3000';
+app.set('port', port);
+
+const server = http.createServer(app);
+
+server.listen(port, () => console.log('API running on localhost: ${port}'));
