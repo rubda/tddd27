@@ -20,7 +20,7 @@ RUN npm install
 COPY . /usr/src/app
 
 # Expose React port
-EXPOSE 3000
+EXPOSE 3001
 
 # Serve the app
 CMD ["npm", "start"]
