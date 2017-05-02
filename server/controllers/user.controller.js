@@ -1,5 +1,7 @@
 import User from '../models/user';
 
+
+// Get all users
 export function getUsers(req, res) {
     User.find({}, (err, users) => {
         if (err) res.status(500).send(err);
@@ -21,7 +23,7 @@ export function getUser(req, res) {
 
 // Create a user
 export function addUser(req, res) {
-        let user = new User({
+    let user = new User({
         name: req.body.name,
         age: req.body.age,
         desc: req.body.desc
