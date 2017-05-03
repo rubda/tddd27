@@ -12,3 +12,6 @@ I'm not a big fan of JavaScript, so I thought I would go all in to experience wh
 
 ### Functional requirements
 The web application that I'm going to build is nothing fancy, but something I think will show what React is capabable of. Basically the idea is to build a web interface, where a user is shown a list of applicants that needs to processed through. The user will able to read and make notes about the applicants and mark if an applicant has been contacted or not. Basically a 'control panel' to handle applicants of all sorts.
+
+### Illustration
+![img](http://i.imgur.com/7ReKyYX.png)
