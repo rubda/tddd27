@@ -26,14 +26,15 @@ export function addUser(req, res) {
     let user = new User({
         name: req.body.name,
         age: req.body.age,
-        desc: req.body.desc
+        desc: req.body.desc,
+        github: req.body.github
     });
 
     user.save(err => {
         if (err) res.status(500).send(err);
 
         res.status(201).json({
-            message: "User created"
+            message: `${user.name} was created`
         });
     });
 }

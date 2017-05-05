@@ -11,7 +11,6 @@ const app = express();
 const dbHost = 'mongodb://database/TDDD272017_applicants';
 mongoose.connect(dbHost);
 
-
 // Get POST stuff to work
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -29,4 +28,4 @@ app.set('port', port);
 
 const server = http.createServer(app);
 
-server.listen(port, () => console.log('API running on localhost:' + port));
+server.listen(port, () => console.log(`API running on localhost ${port}`));
