@@ -6,6 +6,8 @@ const userSchema = new Schema({
     age: Number,
     desc: String,
     github: String,
+    contacted: {type: Boolean, default: false},
+    favourite: {type: Boolean, default: false},
 });
 
 export default mongoose.model('User', userSchema);
