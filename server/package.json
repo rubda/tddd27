@@ -6,7 +6,8 @@
   "scripts": {
     "start": "nodemon -L src/server.js --exec babel-node --presets es2015,stage-2",
     "build": "babel src -d dist --presets es2015,stage-2",
-    "serve": "node dist/server.js"
+    "serve": "node dist/server.js",
+    "prod": "npm run build && npm run serve"
   },
   "dependencies": {
     "express": "^4.15.2",
