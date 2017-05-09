@@ -46,7 +46,7 @@ class GitHub extends Component {
                         </ul>
                     </ModalBody>
                     <ModalFooter>
-                        <Button color="secondary" onClick={this.toggle}>Stäng</Button>
+                        <Button color="secondary" onClick={this.toggle}>Close</Button>
                     </ModalFooter>
                 </Modal>
             </div>
