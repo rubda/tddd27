@@ -9,6 +9,7 @@ import Applicant from "./components/Applicant";
 import GitHub from "./components/GitHub";
 import Contacted from "./components/Contacted";
 import Favourite from "./components/Favourite";
+import Delete from "./components/Delete";
 
 class Applicants extends Component {
     constructor(props) {
@@ -55,10 +56,11 @@ class Applicants extends Component {
                     <div>
                         {filteredApplicants.slice(0).reverse().map(users =>
                             <div key={users._id} className="row text-center" style={{ padding: '0 0 15px 0' }}>
-                                <div className="col-lg-3"><Applicant user={users}/></div>
-                                <div className="col-lg-3"><GitHub github={users.github}/></div>
-                                <div className="col-lg-3"><Contacted id={users._id} contacted={users.contacted}/></div>
-                                <div className="col-lg-3"><Favourite id={users._id} favourite={users.favourite}/></div>
+                                <div className="col-lg-4"><Applicant user={users}/></div>
+                                <div className="col-lg-2"><GitHub github={users.github}/></div>
+                                <div className="col-lg-2"><Contacted id={users._id} contacted={users.contacted}/></div>
+                                <div className="col-lg-2"><Favourite id={users._id} favourite={users.favourite}/></div>
+                                <div className="col-lg-2"><Delete id={users._id}/></div>
                             </div>
                         )}
                     </div>
