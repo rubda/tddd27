@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
 import axios from 'axios';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import FontAwesome from 'react-fontawesome';
@@ -15,20 +14,16 @@ class GitHub extends Component {
         this.toggle = this.toggle.bind(this);
     }
 
-    /*
-    componentDidMount() {
+    toggle() {
+        this.setState({
+            modal: !this.state.modal
+        });
+
         axios.get(`https://api.github.com/users/${this.props.github}/repos`)
             .then(res => {
                 const repos = res.data.map(obj => obj);
                 this.setState({ repos });
             });
-    }
-    */
-
-    toggle() {
-        this.setState({
-            modal: !this.state.modal
-        });
     }
 
     render() {
@@ -44,6 +39,7 @@ class GitHub extends Component {
                                 <li key={ repos.id }><a href={ repos.html_url }>{ repos.name } - { repos.description }</a></li>
                             )}
                         </ul>
+                        <h6 className="text-center"><a href={`https://github.com/${this.props.github}`}>Visit GitHub Page</a></h6>
                     </ModalBody>
                     <ModalFooter>
                         <Button color="secondary" onClick={this.toggle}>Close</Button>
