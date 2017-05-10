@@ -27,6 +27,7 @@ export function addUser(req, res) {
         name: req.body.name,
         age: req.body.age,
         desc: req.body.desc,
+        email: req.body.email,
         github: req.body.github
     });
 
