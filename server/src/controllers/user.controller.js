@@ -55,3 +55,15 @@ export function updateUser(req, res) {
         });
     });
 }
+
+
+// Delete a user
+export function deleteUser(req, res) {
+    User.findByIdAndRemove(req.params.id, (err, users) => {
+        if (err) res.status(500).send(err);
+
+        res.status(202).json({
+            message: `User was removed`
+        });
+    });
+}
