@@ -28,7 +28,8 @@ class NavBar extends Component {
                     <NavbarBrand href="/">TDDD27 - Applicants</NavbarBrand>
                     <Nav className="mr-auto p2" navbar>
                         <NavItem>
-                            <Input placeholder="Search for an applicant" style={{ width: "400px" }}/>
+                            <Input value={this.props.value} onChange={this.props.onChange}
+                                   placeholder="Search for an applicant" style={{ width: "400px" }}/>
                         </NavItem>
                     </Nav>
                     <Nav className="ml-auto" navbar>
