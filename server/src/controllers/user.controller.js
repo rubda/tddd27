@@ -45,8 +45,8 @@ export function updateUser(req, res) {
     User.findById(req.params.id, (err, users) => {
         if (err) res.status(500).send(err);
 
-        users.contacted = req.body.contacted;
-        users.favourite = req.body.favourite;
+        if ('contacted' in req.body) users.contacted = req.body.contacted;
+        if ('favourite' in req.body) users.favourite = req.body.favourite;
         users.save();
 
         res.status(202).json({

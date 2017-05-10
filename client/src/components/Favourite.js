@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Button } from 'reactstrap';
 import FontAwesome from 'react-fontawesome';
+import axios from 'axios';
 
 class Favourite extends Component {
     constructor(props) {
@@ -18,6 +19,17 @@ class Favourite extends Component {
             favourite: !this.state.favourite,
             name: this.state.favourite ? 'star' : 'star-o'
         });
+
+        let params = new URLSearchParams();
+        params.append('favourite', this.state.favourite);
+
+        axios.post(`http://127.0.0.1:3000/api/users/${this.props.id}`, params)
+            .then(function (response) {
+                console.log(response);
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
     }
 
     render() {

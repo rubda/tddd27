@@ -51,8 +51,8 @@ class Applicants extends Component {
                             <div key={ users._id } className="row text-center" style={{ padding: '0 0 15px 0' }}>
                                 <div  className="col-lg-3"><Applicant name={ users.name } desc={ users.desc }/></div>
                                 <div className="col-lg-3"><GitHub github={ users.github }/></div>
-                                <div className="col-lg-3"><Contacted contacted={ users.contacted }/></div>
-                                <div className="col-lg-3"><Favourite favourite={ users.favourite } /></div>
+                                <div className="col-lg-3"><Contacted id={ users._id } contacted={ users.contacted }/></div>
+                                <div className="col-lg-3"><Favourite id={ users._id } favourite={ users.favourite }/></div>
                             </div>
                         )}
                     </div>
