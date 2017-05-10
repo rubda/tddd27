@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Navbar, NavbarBrand, Nav, NavItem, NavLink, Input } from 'reactstrap';
+import { Navbar, NavbarBrand, Nav, NavItem, NavLink, Input, InputGroup, InputGroupAddon } from 'reactstrap';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import FontAwesome from 'react-fontawesome';
 
@@ -28,8 +28,11 @@ class NavBar extends Component {
                     <NavbarBrand href="/">TDDD27 - Applicants</NavbarBrand>
                     <Nav className="mr-auto p2" navbar>
                         <NavItem>
-                            <Input value={this.props.value} onChange={this.props.onChange}
-                                   placeholder="Search for an applicant" style={{ width: "400px" }}/>
+                            <InputGroup>
+                                <Input value={this.props.value} onChange={this.props.onChange}
+                                       placeholder="Search for an applicant" style={{ width: "400px" }}/>
+                                <InputGroupAddon><FontAwesome name="search"/></InputGroupAddon>
+                            </InputGroup>
                         </NavItem>
                     </Nav>
                     <Nav className="ml-auto" navbar>
