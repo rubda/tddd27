@@ -58,6 +58,16 @@ class ApplicationForm extends Component {
             .catch(function (error) {
                 console.log(error);
             });
+
+        let user = {
+            name: this.state.name,
+            age: this.state.age,
+            desc: this.state.desc,
+            email: this.state.email,
+            github: this.state.github,
+        };
+
+        this.props.addUserToState(user);
     }
 
     render() {
