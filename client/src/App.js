@@ -52,7 +52,7 @@ class Applicants extends Component {
                                 <div  className="col-lg-3"><Applicant name={ users.name } desc={ users.desc }/></div>
                                 <div className="col-lg-3"><GitHub github={ users.github }/></div>
                                 <div className="col-lg-3"><Contacted contacted={ users.contacted }/></div>
-                                <div className="col-lg-3"><Favourite contacted={ users.favourite } /></div>
+                                <div className="col-lg-3"><Favourite favourite={ users.favourite } /></div>
                             </div>
                         )}
                     </div>
