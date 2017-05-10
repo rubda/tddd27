@@ -53,7 +53,7 @@ class Applicants extends Component {
                 <Container>
                     <Header/>
                     <div>
-                        {filteredApplicants.map(users =>
+                        {filteredApplicants.slice(0).reverse().map(users =>
                             <div key={users._id} className="row text-center" style={{ padding: '0 0 15px 0' }}>
                                 <div className="col-lg-3"><Applicant user={users}/></div>
                                 <div className="col-lg-3"><GitHub github={users.github}/></div>
