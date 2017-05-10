@@ -20,11 +20,12 @@ class Applicant extends Component {
     render() {
         return (
             <div>
-                <Button style={{ width: "250px" }} onClick={this.toggle}>{ this.props.name }</Button>
+                <Button style={{ width: "250px" }} onClick={this.toggle}>{ this.props.user.name }</Button>
                 <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
-                    <ModalHeader toggle={this.toggle}>{this.props.name}</ModalHeader>
+                    <ModalHeader toggle={this.toggle}>{this.props.user.name}, {this.props.user.age}</ModalHeader>
                     <ModalBody>
-                        { this.props.desc }
+                        <p>{ this.props.user.desc }</p>
+                        <p className="pull-right">{this.props.user.email}</p>
                     </ModalBody>
                     <ModalFooter>
                         <Button color="secondary" onClick={this.toggle}>Close</Button>
@@ -32,8 +33,6 @@ class Applicant extends Component {
                 </Modal>
             </div>
         );
-
-
     }
 }
 

@@ -26,7 +26,7 @@ class Applicants extends Component {
         this.setState({search: event.target.value.substr(0, 20)});
     }
 
-    componentDidMount() {
+    componentDidUpdate() {
         axios.get(`http://127.0.0.1:3000/api/users`)
             .then(res => {
                 const users = res.data.map(obj => obj);
@@ -48,11 +48,11 @@ class Applicants extends Component {
                     <Header/>
                     <div>
                         {filteredApplicants.map(users =>
-                            <div key={ users._id } className="row text-center" style={{ padding: '0 0 15px 0' }}>
-                                <div  className="col-lg-3"><Applicant name={ users.name } desc={ users.desc }/></div>
-                                <div className="col-lg-3"><GitHub github={ users.github }/></div>
-                                <div className="col-lg-3"><Contacted id={ users._id } contacted={ users.contacted }/></div>
-                                <div className="col-lg-3"><Favourite id={ users._id } favourite={ users.favourite }/></div>
+                            <div key={users._id} className="row text-center" style={{ padding: '0 0 15px 0' }}>
+                                <div className="col-lg-3"><Applicant user={users}/></div>
+                                <div className="col-lg-3"><GitHub github={users.github}/></div>
+                                <div className="col-lg-3"><Contacted id={users._id} contacted={users.contacted}/></div>
+                                <div className="col-lg-3"><Favourite id={users._id} favourite={users.favourite}/></div>
                             </div>
                         )}
                     </div>
