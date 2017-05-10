@@ -15,4 +15,8 @@ router.route('/users/:id').get(UserController.getUser);
 router.route('/users').post(UserController.addUser);
 
 
+// Update user
+router.route('/users/:id').post(UserController.updateUser);
+
+
 export default router;
