@@ -8,7 +8,7 @@ class ApplicationForm extends Component {
 
         this.state = {
             name: '',
-            age: undefined,
+            age: '',
             desc: '',
             email: '',
             github: ''
@@ -66,6 +66,14 @@ class ApplicationForm extends Component {
             email: this.state.email,
             github: this.state.github,
         };
+
+        this.setState({
+            name: '',
+            age: '',
+            desc: '',
+            email: '',
+            github: ''
+        });
 
         this.props.addUserToState(user);
     }
