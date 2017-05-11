@@ -8,34 +8,31 @@ class Favourite extends Component {
         super(props);
         this.state = {
             favourite: this.props.favourite,
-            name: this.props.favourite ? 'star' : 'star-o'
         };
 
         this.toggle = this.toggle.bind(this);
     }
 
     toggle() {
-        this.setState({
-            favourite: !this.state.favourite,
-            name: this.state.favourite ? 'star' : 'star-o'
+        this.setState({favourite: !this.state.favourite}, () => {
+            let params = new URLSearchParams();
+            params.append('favourite', this.state.favourite);
+
+            axios.post(`http://127.0.0.1:3000/api/users/${this.props.id}`, params)
+                .then(function (response) {
+                    console.log(response);
+                })
+                .catch(function (error) {
+                    console.log(error);
+                });
         });
-
-        let params = new URLSearchParams();
-        params.append('favourite', this.state.favourite);
-
-        axios.post(`http://127.0.0.1:3000/api/users/${this.props.id}`, params)
-            .then(function (response) {
-                console.log(response);
-            })
-            .catch(function (error) {
-                console.log(error);
-            });
     }
 
     render() {
+        let icon = this.state.favourite ? 'star' : 'star-o';
         return (
             <Button onClick={this.toggle} style={{ width: "100px"}}>
-                <FontAwesome name={this.state.name}/>
+                <FontAwesome name={icon}/>
             </Button>
         );
     }

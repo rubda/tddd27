@@ -8,34 +8,31 @@ class Contacted extends Component {
         super(props);
         this.state = {
             contacted: this.props.contacted,
-            name: this.props.contacted ? 'check-square' : 'square-o'
         };
 
         this.toggle = this.toggle.bind(this);
     }
 
     toggle() {
-        this.setState({
-            contacted: !this.state.contacted,
-            name: this.state.contacted ? 'check-square' : 'square-o'
+        this.setState({contacted: !this.state.contacted}, () => {
+            let params = new URLSearchParams();
+            params.append('contacted', this.state.contacted);
+
+            axios.post(`http://127.0.0.1:3000/api/users/${this.props.id}`, params)
+                .then(function (response) {
+                    console.log(response);
+                })
+                .catch(function (error) {
+                    console.log(error);
+                });
         });
-
-        let params = new URLSearchParams();
-        params.append('contacted', this.state.contacted);
-
-        axios.post(`http://127.0.0.1:3000/api/users/${this.props.id}`, params)
-            .then(function (response) {
-                console.log(response);
-            })
-            .catch(function (error) {
-                console.log(error);
-            });
     }
 
     render() {
+        let icon = this.state.contacted ? 'check-square' : 'square-o';
         return (
             <Button onClick={this.toggle} style={{ width: "100px"}}>
-                <FontAwesome name={this.state.name}/>
+                <FontAwesome name={icon}/>
             </Button>
         );
     }
