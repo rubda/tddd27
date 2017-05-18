@@ -1,0 +1,16 @@
+language: node_js
+node_js:
+  - "node"
+  - "7"
+
+before_install:
+  - cd server
+
+install:
+  - npm install
+
+services:
+  - mongodb
+
+script:
+  - npm test
