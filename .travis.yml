@@ -12,5 +12,11 @@ install:
 services:
   - mongodb
 
+env:
+  - MONGO_URL=mongodb://127.0.0.1/TDDD272017_applicants
+
+before_script:
+  - mongoimport --jsonArray --db TDDD272017_applicants --collection users --drop --file mock_data.json
+
 script:
   - npm test
