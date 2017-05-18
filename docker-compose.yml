@@ -18,6 +18,8 @@ services:
       - database
     volumes:
       - ./server:/usr/src/app
+    environment:
+      - MONGO_URL=mongodb://database/TDDD272017_applicants
 
   database:
     image: mongo

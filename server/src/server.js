@@ -8,7 +8,7 @@ import users from "./routes/user.routes";
 const app = express();
 
 // Connect to database
-const dbHost = 'mongodb://database/TDDD272017_applicants';
+const dbHost = process.env.MONGO_URL;
 mongoose.connect(dbHost);
 
 // Get POST stuff to work
