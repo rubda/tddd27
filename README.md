@@ -1,6 +1,8 @@
 # Applicants
 This is a project made for the course TDDD27 - Advanced Web Programming.
 
+[![Build Status](https://travis-ci.com/rubda/tddd27.svg?token=y1NXzEJyZUZutosMXEQb&branch=master)](https://travis-ci.com/rubda/tddd27)
+
 ### Technical requirements
 My initial thoughts regarding the technical aspects for this project is to build a MERN stack. Basically a web stack containing
 - MongoDB (NoSQL database, to persist data)
