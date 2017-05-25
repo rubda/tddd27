@@ -39,7 +39,7 @@ class GitHub extends Component {
                                 <li key={ repos.id }><a href={ repos.html_url }>{ repos.name } - { repos.description }</a></li>
                             )}
                         </ul>
-                        <h6 className="text-center"><a target="_blank" href={`https://github.com/${this.props.github}`}>Visit GitHub Page</a></h6>
+                        <h6 className="text-center"><a target="_blank" rel="noopener noreferrer" href={`https://github.com/${this.props.github}`}>Visit GitHub Page</a></h6>
                     </ModalBody>
                     <ModalFooter>
                         <Button color="secondary" onClick={this.toggle}>Close</Button>
