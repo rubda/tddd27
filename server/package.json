@@ -11,16 +11,16 @@
     "test": "mocha --compilers js:babel-register"
   },
   "dependencies": {
-    "express": "^4.15.2",
-    "body-parser": "^1.17.1",
-    "mongoose": "^4.9.6"
+    "express": "^4.15.3",
+    "body-parser": "^1.17.2",
+    "mongoose": "^4.10.2"
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-stage-2": "^6.24.1",
     "babel-register": "^6.24.1",
-    "mocha": "^3.3.0",
+    "mocha": "^3.4.2",
     "nodemon": "^1.11.0"
   },
   "author": "Ruben Das"
