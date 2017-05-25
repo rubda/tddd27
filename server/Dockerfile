@@ -13,7 +13,7 @@ WORKDIR /usr/src/app
 # Copying dependency structure
 COPY package.json /usr/src/app
 
-# Install dependecies
+# Install dependencies
 RUN npm install
 
 # Copying needed code
