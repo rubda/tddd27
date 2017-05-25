@@ -52,9 +52,6 @@ class ApplicationForm extends Component {
         params.append('github', this.state.github);
 
         axios.post('http://127.0.0.1:3000/api/users', params)
-            .then(function (response) {
-                console.log(response);
-            })
             .catch(function (error) {
                 console.log(error);
             });

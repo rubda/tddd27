@@ -19,9 +19,6 @@ class Favourite extends Component {
             params.append('favourite', this.state.favourite);
 
             axios.post(`http://127.0.0.1:3000/api/users/${this.props.id}`, params)
-                .then(function (response) {
-                    console.log(response);
-                })
                 .catch(function (error) {
                     console.log(error);
                 });
