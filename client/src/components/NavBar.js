@@ -48,7 +48,7 @@ class NavBar extends Component {
                 <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
                     <ModalHeader toggle={this.toggle}>Add application</ModalHeader>
                     <ModalBody>
-                        <ApplicationForm addUser={this.props.addUserToState}/>
+                        <ApplicationForm/>
                     </ModalBody>
                     <ModalFooter>
                         <Button color="secondary" onClick={this.toggle}>Close</Button>

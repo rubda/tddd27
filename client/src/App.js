@@ -20,13 +20,7 @@ class Applicants extends Component {
             search: ''
         };
 
-        this.addUserToState = this.addUserToState.bind(this);
         this.updateSearch = this.updateSearch.bind(this);
-    }
-
-    addUserToState(user) {
-        let newUsers = this.state.users.concat([user]);
-        this.setState({users: newUsers});
     }
 
     updateSearch(event) {
@@ -50,7 +44,7 @@ class Applicants extends Component {
 
         return (
             <div>
-                <NavBar value={this.state.search} onChange={this.updateSearch} addUser={this.addUserToState}/>
+                <NavBar value={this.state.search} onChange={this.updateSearch}/>
                 <Container>
                     <Header/>
                     <div>

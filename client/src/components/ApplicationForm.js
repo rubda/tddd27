@@ -56,14 +56,6 @@ class ApplicationForm extends Component {
                 console.log(error);
             });
 
-        let user = {
-            name: this.state.name,
-            age: this.state.age,
-            desc: this.state.desc,
-            email: this.state.email,
-            github: this.state.github,
-        };
-
         this.setState({
             name: '',
             age: '',
@@ -71,8 +63,6 @@ class ApplicationForm extends Component {
             email: '',
             github: ''
         });
-
-        this.props.addUserToState(user);
     }
 
     render() {
