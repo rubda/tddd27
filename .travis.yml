@@ -9,6 +9,10 @@ before_install:
 install:
   - npm install
 
+cache:
+  directories:
+    - node_modules
+
 services:
   - mongodb
 
